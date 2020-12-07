@@ -51,8 +51,9 @@ CREATE TABLE users_chatrooms (
 
 CREATE TABLE tasks (
     id INT(10) PRIMARY KEY AUTO_INCREMENT,
-    management_user_id INT(10) NOT NULL,
     chatroom_id INT(10) NOT NULL,
+    task_content VARCHAR(1000) NOT NULL,
+    management_user_id INT(10) NOT NULL,
     deadline DATETIME,
     is_compleated TINYINT(1) DEFAULT 0 NOT NULL,
     is_deleted TINYINT(1) DEFAULT 0 NOT NULL,
