@@ -4,7 +4,7 @@ WHERE c.is_deleted=0
 	AND u.is_deleted=0 
     AND c.id=p.chatroom_id 
     AND u.id=p.created_by 
-    AND p.created_at=(SELECT MIN(tmp.created_at) 
+    AND p.created_at=(SELECT MAX(tmp.created_at) 
                     FROM posts tmp 
                     WHERE p.chatroom_id=tmp.chatroom_id 
                     GROUP BY tmp.chatroom_id) 
